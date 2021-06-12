@@ -9,10 +9,13 @@ const createBoard = () => {
     squares.push($square);
   }
 
+  //creating two arrays. one with bombs, the other filled so can concat and randomized the bombs
   const bombs = Array(noOfBombs).fill("bomb");
-  const empty = Array(noOfSquares * noOfSquares).fill("1");
-  console.log(bombs);
-  console.log(empty);
+  const empty = Array(noOfSquares * noOfSquares - noOfBombs).fill("1");
+  const randomBombs = empty.concat(bombs);
+  randomBombs.sort(() => 0.5 - Math.random());
+  //sorting array in random https://stackoverflow.com/questions/53591691/sorting-an-array-in-random-order
+  console.log(randomBombs);
 };
 
 const main = () => {
