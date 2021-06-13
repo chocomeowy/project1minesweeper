@@ -8,7 +8,7 @@ const empty = Array(noOfSquares * noOfSquares - noOfBombs).fill("1");
 const randomBombs = empty.concat(bombs);
 randomBombs.sort(() => 0.5 - Math.random());
 //sorting array in random https://stackoverflow.com/questions/53591691/sorting-an-array-in-random-order
-console.log(randomBombs);
+//console.log(randomBombs);
 
 const createBoard = () => {
   for (let i = 0; i < noOfSquares * noOfSquares; i++) {
@@ -16,9 +16,13 @@ const createBoard = () => {
     $(".grid").append($square);
     squares.push($square);
   }
+
+  $(".bomb").click(() => console.log("bomb clicked"));
 };
 
-const reset = () => {};
+const reset = () => {
+  $(".reset").onclick(createBoard());
+};
 
 const main = () => {
   $("body").prepend("<h1>Welcome to Minesweeper!</h1>");
