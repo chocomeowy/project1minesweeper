@@ -17,7 +17,8 @@ const createBoard = () => {
     squares.push($square);
   }
 
-  $(".bomb").click(() => console.log("bomb clicked"));
+  //created bomb click and all red
+  $(".bomb").click(() => $(".bomb").css({ "background-color": "red" }));
 };
 
 const reset = () => {
