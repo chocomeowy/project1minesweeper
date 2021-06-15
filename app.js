@@ -1,6 +1,10 @@
 let squares = [];
 const noOfSquares = 10;
-const noOfBombs = 50;
+const noOfBombs = 10;
+let gameOver = false;
+let checked = 0;
+let flags = 0;
+// win condition should be flags = bombs or checked = noOfSquares*noOfSquares - bombs
 
 // number colours for later
 // numberColours = {
@@ -50,20 +54,48 @@ const createBoard = () => {
     $(".grid").append($square);
     squares.push($square);
 
-    $square.on("click", (event) => {
-      const clickSquare = event.target;
+    $square.on("click", () => {
+      //console.log($(clickSquare).attr("data"));
+      checked++;
+      //console.log(checked);
+      clicking($square);
+    });
 
-      console.log($(clickSquare).attr("data"));
-      $square.text($(clickSquare).attr("data"));
+    //adding right click https://api.jquery.com/contextmenu/
+    $square.on("contextmenu", (e) => {
+      e.preventDefault();
+      addFlag($square);
     });
   }
   //created bomb click and all red
-  $(".bomb").click(() => $(".bomb").css({ "background-color": "red" }));
-  $(".bomb").click(() => {
-    setTimeout(() => {
-      alert("game over"), 500;
-    });
-  });
+
+  const clicking = ($square) => {
+    const clickSquare = event.target;
+    $square.text($(clickSquare).attr("data"));
+    if (gameOver) return;
+    if ($($square).hasClass("bomb")) {
+      $(".bomb").css({ "background-color": "red" }),
+        setTimeout(() => {
+          alert("game over");
+        }, 500);
+      gameOver = true;
+    }
+  };
+
+  const addFlag = ($square) => {
+    const clickSquare = event.target;
+    $square.removeClass().addClass("flag");
+    $square.text("F");
+    flags++;
+  };
+
+  //   $(".bomb").click(() => {
+  //     $(".bomb").css({ "background-color": "red" }),
+  //       setTimeout(() => {
+  //         alert("game over");
+  //       }, 500);
+  //     gameOver = True;
+  //   });
 
   //   $("squares.data").click(() =>
   //     $("squares.data").css({ "background-color": "red" })

@@ -1,9 +1,14 @@
+h1 {
+  margin-left: 180px;
+}
 .grid {
+  margin-left: 170px;
   height: 400px;
   width: 400px;
   display: flex;
   flex-wrap: wrap;
   background-color: grey;
+  outline: 2px solid rgb(32, 32, 32);
 }
 .grid div {
   height: 40px;
@@ -18,5 +23,6 @@
 }
 
 #reset {
-  right: 150px;
+  margin-left: 350px;
+  margin-bottom: 10px;
 }
