@@ -1,6 +1,6 @@
 let squares = [];
 const noOfSquares = 10;
-const noOfBombs = 10;
+const noOfBombs = 50;
 let gameOver = false;
 let checked = 0;
 let flags = $(".flag");
@@ -52,9 +52,10 @@ const createBoard = () => {
       setTimeout(() => {
         alert("game over");
       }, 50);
-      const one = $(".one"); // do a looop over the const one and set the one.
-      for (let i = 0; i < noOfSquares.length; i++) {
-        one.text($(one.attr("data")));
+      // do a looop over the const one and set the one.
+      for (let i = 0; i < 100; i++) {
+        let one = $(`.one#${i}`);
+        one.text(one.attr("data"));
       }
       gameOver = true;
     }
