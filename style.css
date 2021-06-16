@@ -1,6 +1,7 @@
 h1 {
   margin-left: 180px;
 }
+
 .grid {
   margin-left: 170px;
   height: 400px;
@@ -20,6 +21,9 @@ h1 {
 }
 .grid div:hover {
   background-color: rgb(145, 152, 149);
+}
+.flag::after {
+  content: "🚩";
 }
 
 #reset {

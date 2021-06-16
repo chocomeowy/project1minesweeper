@@ -3,7 +3,7 @@ const noOfSquares = 10;
 const noOfBombs = 10;
 let gameOver = false;
 let checked = 0;
-let flags = 0;
+let flags = $(".flag");
 // win condition should be flags = bombs or checked = noOfSquares*noOfSquares - bombs
 
 //creating two arrays. one with bombs, the other filled so can concat and randomized the bombs
@@ -52,23 +52,18 @@ const createBoard = () => {
       setTimeout(() => {
         alert("game over");
       }, 50);
-      $(".one").text($(".one").attr("data"));
+      const one = $(".one"); // do a looop over the const one and set the one.
+      for (let i = 0; i < noOfSquares.length; i++) {
+        one.text($(one.attr("data")));
+      }
       gameOver = true;
     }
   };
 
   const addFlag = ($square) => {
     const clickSquare = event.target;
-    if (true) {
-      $square.removeClass().addClass("flag");
-      $square.text("🚩");
-      flags++;
-      console.log(flags);
-    } else {
-      $square.removeClass();
-      $square.text("F");
-      flags--;
-    }
+    $square.toggleClass("flag");
+    //$(".flag").text("🚩"); //  moved to css
   };
 
   // create numbers.
