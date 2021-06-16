@@ -39,9 +39,11 @@ const createBoard = () => {
     const clickSquare = event.target;
     $square.text($(clickSquare).attr("data")).addClass("checked");
     const numChecked = $(".checked").length;
-    console.log(numChecked);
+    //console.log(numChecked);
     //console.log(noOfSquares * noOfSquares - noOfBombs);
     if (numChecked === noOfSquares * noOfSquares - noOfBombs) {
+      //flag all bombs, stop timer
+      $(".bomb").addClass("flag");
       alert("You Win!");
     }
 
