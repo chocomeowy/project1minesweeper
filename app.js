@@ -91,7 +91,7 @@ const createBoard = () => {
         squares[i - 1 - noOfSquares].hasClass("bomb")
       )
         total++;
-      if (i < 98 && !isRightSide && squares[i + 1].hasClass("bomb")) total++;
+      if (i < 99 && !isRightSide && squares[i + 1].hasClass("bomb")) total++;
       if (
         i < 90 &&
         !isLeftSide &&
@@ -99,12 +99,12 @@ const createBoard = () => {
       )
         total++;
       if (
-        i < 88 &&
+        i < 89 &&
         !isRightSide &&
         squares[i + 1 + noOfSquares].hasClass("bomb")
       )
         total++;
-      if (i < 89 && squares[i + noOfSquares].hasClass("bomb")) total++;
+      if (i < 90 && squares[i + noOfSquares].hasClass("bomb")) total++;
       squares[i].attr("data", total);
     }
   }
