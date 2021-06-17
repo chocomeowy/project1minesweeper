@@ -1,9 +1,9 @@
 h1 {
-  margin-left: 180px;
+  margin-left: 130px;
 }
 
 .grid {
-  margin-left: 170px;
+  margin-left: 120px;
   height: 400px;
   width: 400px;
   display: flex;
@@ -27,6 +27,6 @@ h1 {
 }
 
 #reset {
-  margin-left: 350px;
+  margin-left: 300px;
   margin-bottom: 10px;
 }
