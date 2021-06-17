@@ -1,6 +1,6 @@
 let squares = [];
 const noOfSquares = 10;
-const noOfBombs = 20;
+const noOfBombs = 10;
 let checked = 0;
 // win condition should be flags = bombs or checked = noOfSquares*noOfSquares - bombs
 
