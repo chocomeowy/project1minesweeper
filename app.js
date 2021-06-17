@@ -54,7 +54,7 @@ const createBoard = () => {
       setTimeout(() => {
         alert("game over");
       }, 50);
-      // do a looop over the const one and set the one.
+      // do a loop over the const one and set the one.
       for (let i = 0; i < 100; i++) {
         let one = $(`.one#${i}`);
         one.text(one.attr("data"));
