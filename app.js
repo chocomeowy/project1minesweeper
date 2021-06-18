@@ -83,7 +83,7 @@ const createBoard = () => {
         squares[i + 1 - noOfSquares].hasClass("bomb")
       )
         total++;
-      if (i > 10 && squares[i - noOfSquares].hasClass("bomb")) total++;
+      if (i > 9 && squares[i - noOfSquares].hasClass("bomb")) total++;
 
       if (
         i > 11 &&
